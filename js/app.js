@@ -1,0 +1,1 @@
+var App = angular.module('app',['ngResource','app.models','app.controllers','app.directives']);
