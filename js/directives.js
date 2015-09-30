@@ -8,7 +8,7 @@ angular.module('app.directives',[])
 		templateUrl     : '/directives/rating.html',
 		link   : function(scope){
 			if(scope.rating.ratings > 0 && scope.rating.score > 0){
-				scope.average = ( scope.rating.score / scope.rating.ratings ).toFixed(2)
+				scope.average = Number(( scope.rating.score / scope.rating.ratings ).toFixed(2));
 			}else{
 				scope.average = 0;
 			}
