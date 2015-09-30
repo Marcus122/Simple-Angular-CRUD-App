@@ -9,9 +9,12 @@
 		<script src="/js/controllers.js"></script>
 		<script src="/js/models.js"></script>
 		<script src="/js/directives.js"></script>
+		<link href="/css/style.css" rel="stylesheet" type="text/css"/>
 	</head>
 	<body ng-controller="appController">
-		<p>{{title}}</p>
-		<div ng-view/>
+		<div class="main">
+			<p>{{title}}</p>
+			<div ng-view/>
+		</div>
 	</body>
 </html>
