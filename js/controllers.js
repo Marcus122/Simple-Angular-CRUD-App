@@ -1,5 +1,8 @@
 angular.module('app.controllers',[])
-.controller('appController',function($scope,Ratings){
+.controller('appController',function($scope){
+	$scope.title = "Reviews";
+})
+.controller('MainController',function($scope,Ratings,$location){
 	Ratings.getRatings(function(ratings){
 		$scope.ratings = ratings;
 	});
@@ -10,10 +13,7 @@ angular.module('app.controllers',[])
 			delete rate.userScore;
 			rate.$save();
 		});
-		$scope.showResults = true;
-	}
-	$scope.rescore = function(){
-		$scope.showResults = false;
+		$location.path('/results');
 	}
 	$scope.remove = function(rating){
 		if(!rating.new){
@@ -31,4 +31,12 @@ angular.module('app.controllers',[])
 		});
 	}
 	populateRatings();
+})
+.controller('ResultsController',function($scope,Ratings,$location){
+	Ratings.getRatings(function(ratings){
+		$scope.ratings = ratings;
+	});
+	$scope.rescore = function(){
+		$location.path('/');
+	}
 });

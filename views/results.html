@@ -1,0 +1,11 @@
+<div ng-if="ratings.length">
+	<ul>
+		<li ng-repeat="r in ratings">
+			<rating value="r"/>
+		</li>
+	</ul>
+	<button ng-click="rescore()">Score again</button>
+</div>
+<div ng-if="!ratings.length">
+	<p>No results</p>
+</div>

@@ -1,0 +1,14 @@
+<div>
+	<form ng-submit="rate()">
+		<ul>
+			<li ng-repeat="rating in ratings">
+				<label ng-if="!rating.new">{{rating.name}}</label>
+				<input ng-model="rating.name" ng-if="rating.new" placeholder="Name" required/>
+				<input type="number" min="0" max="5" ng-model="rating.userScore" value="0" required/>
+				<button type="button" ng-click="remove(rating)">Remove</button>
+			</li>
+		</ul>
+		<button type="button" ng-click="create()">New</button>
+		<button>Submit</button>
+	</form>
+</div>
