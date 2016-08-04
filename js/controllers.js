@@ -16,14 +16,10 @@ angular.module('app.controllers',[])
 		$location.path('/results');
 	}
 	$scope.remove = function(rating){
-		if(!rating.new){
-			rating.$delete();
-		}
-		Ratings.clearResults();
-		populateRatings();
+		Ratings.deleteRating(rating);
 	}
 	$scope.create = function(){
-		$scope.ratings.push(Ratings.createNew());
+		Ratings.createNew();
 	}
 	function populateRatings(){
 		Ratings.getRatings(function(ratings){
